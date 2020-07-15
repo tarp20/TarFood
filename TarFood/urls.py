@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from TarFoodApp import views
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home, name='home')
+    path('',views.home, name='home'),
+    path('restaurant/sing-in', LoginView.as_view(),
+         {'template_name' : 'restaurant/sing-in.html'},
+         name ='restaurant-sing-in'),
 
 ]
