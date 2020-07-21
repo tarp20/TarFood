@@ -1,0 +1,1 @@
+web: gunicorn TarFood.wsgi --log-file -
