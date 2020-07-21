@@ -1,11 +1,12 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from TarFoodApp import views
 from django.contrib.auth import views as auth_views
 
 from django.conf.urls.static import static
 from django.conf import settings
+
 
 
 urlpatterns = [
@@ -15,8 +16,8 @@ urlpatterns = [
          name = 'restaurant-sing-in'),
     path('restaurant/sign-out/', auth_views.LogoutView.as_view(next_page = '/'),name = 'restaurant-sign-out'),
     path('restaurant/sign-up/', views.restaurant_sign_up, name='restaurant-sign-up'),
-
     path('restaurant/',views.restaurant_home,name = 'restaurant-home'),
+    path('api/social/', include('rest_framework_social_oauth2.urls')),
 
 
 
