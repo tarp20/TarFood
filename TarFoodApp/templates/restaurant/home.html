@@ -1,19 +1,17 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
-    <link rel = "stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel = "stylesheet" href="{% static 'css/style.css' %}">
+{% block title  %}Restaurant{% endblock %}
 
-    <script scr = '{% static 'js/bootstrap.min.js' %}'></script>
+{% block sidebar %}
+ Restaurant,Hi {{ request.user }}
+    <hr/>
 
+     <a href="{% url 'restaurant-account' %}">Account</a>
+    -
+     <a href="{% url 'restaurant-meal' %}">Meal</a>
+    -
+     <a href="{% url 'restaurant-order' %}">Order</a>
+    -
+     <a href="{% url 'restaurant-report' %}">Report</a>
 
-</head>
-<body>
-  Restaurant Page
-  <a href="{% url 'restaurant-sign-out' %}">Log out</a>
-</body>
-</html>
+{% endblock %}
