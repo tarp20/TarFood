@@ -1,7 +1,8 @@
 
 from django.contrib import admin
 from django.urls import path,include
-from TarFoodApp import views
+
+from TarFoodApp import views,apis
 from django.contrib.auth import views as auth_views
 
 from django.conf.urls.static import static
@@ -27,6 +28,8 @@ urlpatterns = [
 
 
     path('api/social/', include('rest_framework_social_oauth2.urls')),
+
+    path('api/customer/restaurants/', apis.customer_get_restaurants),
 
 
 

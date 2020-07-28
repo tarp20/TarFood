@@ -20,7 +20,7 @@ class UserFormForEdit(forms.ModelForm):
 class RestaurantForm(forms.ModelForm):
     class Meta:
         model = Restaurant
-        fields = ('name','phone','adress','logo')
+        fields = ('name','phone','address','logo')
 
 class MealForm(forms.ModelForm):
     class Meta:

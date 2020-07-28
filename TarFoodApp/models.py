@@ -7,7 +7,7 @@ class Restaurant(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,related_name='restaurant')
     name = models.CharField(max_length=500)
     phone = models.CharField(max_length=500)
-    adress = models.CharField(max_length=500)
+    address = models.CharField(max_length=500)
     logo = models.ImageField(upload_to='restaurant_logo/',blank=False)
 
     def __str__(self):
@@ -54,7 +54,7 @@ class Order(models.Model):
     STATUS_CHOICES = (
         (COOCKING,"COOCKING"),
         (READY, "READY"),
-        (ONTHEWAY, "ONTHEWAY"),
+        (ONTHEWAY, "ON THE WAY"),
         (DELIVERED, "DELIVERED"),
     )
 
@@ -63,7 +63,7 @@ class Order(models.Model):
     driver = models.ForeignKey(Driver,on_delete=models.CASCADE)
     address = models.CharField(max_length=500)
     total = models.IntegerField()
-    status = models.IntegerField(choices=STATUS_CHOICES)
+    status = models.IntegerField( choices = STATUS_CHOICES)
     created_at = models.DateTimeField(default=timezone.now)
     picked_at = models.DateTimeField(blank = True,null=True)
 
