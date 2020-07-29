@@ -36,7 +36,7 @@ class Driver(models.Model):
 
 class Meal(models.Model):
     restaurant = models.ForeignKey(Restaurant,on_delete=models.CASCADE)
-    meal = models.CharField(max_length=500)
+    name = models.CharField(max_length=500)
     short_description = models.CharField(max_length=500)
     image = models.ImageField(upload_to='meal_image/', blank=False)
     price = models.IntegerField(default=0)

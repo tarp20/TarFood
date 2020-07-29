@@ -24,9 +24,8 @@ class RestaurantForm(forms.ModelForm):
 
 class MealForm(forms.ModelForm):
     class Meta:
-        fields = '__all__'
         model=Meal
-        exlude = ("restaurant")
+        exclude = ("restaurant",)
 
 
 

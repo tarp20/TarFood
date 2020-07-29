@@ -22,14 +22,19 @@ urlpatterns = [
     path('restaurant/account/', views.restaurant_account, name = 'restaurant-account'),
     path('restaurant/meal/', views.restaurant_meal, name = 'restaurant-meal'),
     path('restaurant/meal/add/', views.restaurant_add_meal, name = 'restaurant-add-meal'),
-    path('restaurant/meal/edit/(?<meal_id>\d+)', views.restaurant_edit_meal, name = 'restaurant-edit-meal'),
+    path('restaurant/meal/edit/<meal_id>', views.restaurant_edit_meal, name = 'restaurant-edit-meal'),
     path('restaurant/order/', views.restaurant_order, name = 'restaurant-order'),
     path('restaurant/report/', views.restaurant_report, name = 'restaurant-report'),
 
 
     path('api/social/', include('rest_framework_social_oauth2.urls')),
 
+
+
     path('api/customer/restaurants/', apis.customer_get_restaurants),
+    path('api/customer/meals/<restaurant_id>/', apis.customer_get_meals),
+    path('api/customer/order/add/', apis.customer_add_order),
+    path('api/customer/order/latest', apis.customer_get_latest_order),
 
 
 
