@@ -31,6 +31,7 @@ urlpatterns = [
     path('api/social/', include('rest_framework_social_oauth2.urls')),
 
 
+
     path('api/restaurant/order/notification/<last_request_time>/', apis.restaurant_order_notification),
 
 
