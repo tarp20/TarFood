@@ -71,6 +71,8 @@ def restaurant_edit_meal(request,meal_id):
 
     return render(request,'restaurant/edit_meal.html',{
         "form":form
+
+        
     })
 
 
